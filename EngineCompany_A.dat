@@ -1,0 +1,68 @@
+#Engine Company nodes
+set Company := n1 n2 n3 n4 n5 n6 n7 n8;
+
+#Subset of plant nodes
+set Plants := n1 n2 n3;
+
+#Subset of warehouse nodes
+set Warehouses := n4 n5;
+
+#Subset of distributor nodes
+set Distributors := n6 n7 n8;
+
+#List of directed arcs that compone the entire graph 
+set Link := 
+(n1, n4)
+(n1, n5)
+(n2, n4)
+(n2, n5)
+(n3, n4)
+(n3, n5)
+(n4, n6)
+(n4, n7)
+(n4, n8)
+(n5, n6)
+(n5, n7)
+(n5, n8);
+
+#Subset of links from plants to warehouses
+set PlantLink :=
+(n1, n4)
+(n1, n5)
+(n2, n4)
+(n2, n5)
+(n3, n4)
+(n3, n5);
+
+#Link costs
+param Costs :=
+n1, n4 4
+n1, n5 5
+n2, n4 6
+n2, n5 4
+n3, n4 3
+n3, n5 5
+n4, n6 6
+n4, n7 4
+n4, n8 3
+n5, n6 3
+n5, n7 5
+n5, n8 2;
+
+#Engine production cost for each plant
+param ProductionCosts :=
+n1 13
+n2 15
+n3 12;
+
+#Capacities and demands for each node
+param DemSup :=
+n1 -400
+n2 -300
+n3 -600
+n4 0
+n5 0
+n6 300
+n7 600
+n8 100;
+
